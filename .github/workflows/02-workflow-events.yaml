@@ -1,11 +1,16 @@
+# Nome do Workflow
 name: 02 - Workflow Events
 
+# Define que o gatilho será o evento 'push'
 on:
-  push:
+  push
 
+# Define os trabalhos (jobs) a serem executados
 jobs:
   echo:
+    # A máquina virtual que será usada
     runs-on: ubuntu-latest
+    # Os passos a serem executados no job
     steps:
       - name: Show the trigger
         run: echo "O evento que disparou este workflow foi: ${{ github.event_name }}"
