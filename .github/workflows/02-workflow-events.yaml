@@ -1,28 +1,15 @@
-# Nome do Workflow
 name: 02 - Workflow Events
 
-# A seção 'on' agora terá múltiplos gatilhos
 on:
-  # 1. O gatilho que já tínhamos
   push:
-
-  # 2. Acionado quando um Pull Request é aberto ou atualizado
   pull_request:
-
-  # 3. Permite que o workflow seja iniciado manualmente na aba "Actions"
   workflow_dispatch:
-
-  # 4. Aciona o workflow em um horário agendado
   schedule:
-    # A sintaxe 'cron' define a frequência.
-    # '*/15 * * * *' significa "a cada 15 minutos".
     - cron: '*/15 * * * *'
 
-# A seção de jobs continua exatamente a mesma
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: Show the trigger
-        # Usaremos a sua string em português que já estava correta :)
         run: echo "O evento que disparou este workflow foi: ${{ github.event_name }}"
