@@ -13,4 +13,6 @@ jobs:
     # Os passos a serem executados no job
     steps:
       - name: Show the trigger
+        # ----- LINHA CORRIGIDA -----
+        # Removemos o '$' extra antes de '${{'
         run: echo "O evento que disparou este workflow foi: ${{ github.event_name }}"
