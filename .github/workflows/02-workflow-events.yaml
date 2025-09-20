@@ -1,10 +1,7 @@
 name: 02 - Workflow Events
 
+# Agora, deixamos apenas o gatilho para execução manual
 on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
